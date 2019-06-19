@@ -11,8 +11,12 @@ public class card implements pay {
     }
 
     public card(double price, int cardNumber){
-        this.price = price;
-        this.cardNumber = cardNumber;
+        is_card();
+        if(is_vaild){
+            this.price = price;
+            this.cardNumber = cardNumber;
+            System.out.println("카드 결제가 완료되었습니다.");
+        }
     }
 
     public double pay(){

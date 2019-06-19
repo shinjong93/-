@@ -19,6 +19,14 @@ public class  productCatalog {
         item[index] = new product(-1,-1);
     }
 
+    public static void showItem(){
+        int index = 1;
+        for(product i : item){
+            System.out.println("상품 번호 : " + index + "\n사용시간 : " + i.getTime() + " 가격 : " + i.getPrice());
+            index++;
+        }
+    }
+
     public static void addItem(double price, double time){
         for(int i = 0; i < item.length; i++){
             if(item[i].getPrice() == -1){

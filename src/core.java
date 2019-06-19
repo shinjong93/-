@@ -6,6 +6,7 @@ import admin.*;
 public class core {
     private  productCatalog items;
     private custInfo custInfos;
+    private product selected;
     private pay cash;
     private pay card;
     private admin admin;
@@ -27,17 +28,38 @@ public class core {
             isAdmin = true;
             logIn = true;
             System.out.println("관리자로 로그인 되었습니다.");
+        } else {
+            System.out.println("로그인에 실패하였습니다.");
         }
     }
 
-    public void cardPay(double price, int cardNumber){
+    public void showItem(){
+        items.showItem();
+    }
+
+    public void select(int index){
+        selected = items.getItem(index);
+    }
+
+    public void cardPay(int cardNumber){
+        double price = selected.getPrice();
         card = new card(price,cardNumber);
         card.pay();
     }
 
-    public void cashPay(double price, double input){
+    public void cashPay( double input){
+        double price = selected.getPrice();
         cash = new cash(price, input);
         cash.pay();
+    }
+
+    public boolean adminLogIn(){
+        return isAdmin;
+    }
+
+    public void logOut(){
+        isAdmin = false;
+        logIn = false;
     }
 
     public void createItem(double price, double time){

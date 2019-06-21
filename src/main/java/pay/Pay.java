@@ -1,5 +1,5 @@
 package pay;
 
-public interface pay {
+public interface Pay {
     double pay();
 }

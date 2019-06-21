@@ -1,8 +1,10 @@
 import java.util.*;
 
-public class kiosk {
-    static core c = new core();
+public class Kiosk {
+
+    static Core c = new Core();
     static Scanner s = new Scanner(System.in);
+
     public static void main(String[] args) {
         int flag = -1;
         int pay = 1;
@@ -53,12 +55,7 @@ public class kiosk {
             c.logOut();
             System.out.println("종료를 위해서는 0을 입력하십시오.");
             flag = s.nextInt();
-
         }
-
-
     }
-
-
 }
 
